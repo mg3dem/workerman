@@ -34,7 +34,7 @@ var interval time.Duration = 100
 var errorDelay time.Duration = 1000
 
 /** Worker runs counter */
-var i uint64 = 1
+var workerRuns uint64 = 1
 
 /** Number of running workers */
 var workersCount uint = 0
@@ -120,7 +120,7 @@ func main() {
 				continue
 			}
 			// Run independent worker
-			go workerRunner(channel, i)
+			go workerRunner(channel, workerRuns)
 			// Send worker the name of the tube to process
 			channel <- worker
 			// See how many workers we have running at the moment
@@ -128,6 +128,6 @@ func main() {
 		}
 		// Be polite to system
 		time.Sleep(interval * time.Millisecond)
-		i++
+		workerRuns++
 	}
 }

@@ -7,15 +7,16 @@ It is written in [Google Go language](http://golang.org/) and can be run either 
 
 ## Compiling/running
 
-The tool may be either run: `go run main.go`
+The tool may be either run immediately: `go run main.go`. Use `nohup go run main.go > workerman.log &` to run in background with logs in workerman.log.
 
-Or compiled: `go build main.go`
+Or compiled: `go build main.go`. Then rename `main` executable into `workerman` and run `nohup workerman > workerman.log &`
+
 
 ## Command line options
 
-`--connect <addr:port>` -- Address and port of the beanstalk server to connect to. If ommited, defaults to 0.0.0.0:11300
+`--connect <addr:port>` -- Address and port of the beanstalk server to connect to. If omitted, defaults to `0.0.0.0:11300`
 
-`--workers <path/to/directory>` -- Directory path with worker scripts. Default: ./workers/
+`--workers <path/to/directory>` -- Directory path with worker scripts. If omitted default: `./workers/`
 
 Delays can be tweaked in source file header.
 
