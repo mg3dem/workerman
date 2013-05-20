@@ -11,6 +11,13 @@ The tool may be either run immediately: `go run main.go`. Use `nohup go run main
 
 Or compiled: `go build main.go`. Then rename `main` executable into `workerman` and run `nohup workerman > workerman.log &`
 
+## Usage
+
+Run the workerman and put worker scripts in workers directory.
+The application will automatically subscribe to beanstalk tubes by worker name (e.g. if you have worker file named `MyWorker1`, it will subscribe to `MyWorker1` tube).
+Also will unsubscribe/ignore when worker files are removed from directory.
+
+PS: It does not track `default` tube.
 
 ## Command line options
 
