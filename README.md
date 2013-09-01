@@ -25,6 +25,8 @@ PS: It does not track `default` tube.
 
 `--workers <path/to/directory>` -- Directory path with worker scripts. If omitted default: `./workers/`
 
+`--user <username>` -- System account name to switch. Works only if run as root.
+
 Delays can be tweaked in source file header.
 
 ## Dependencies
